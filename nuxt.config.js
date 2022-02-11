@@ -84,7 +84,8 @@ export default {
         accurateTrackBounce: true,
         webvisor: true
       }
-    ]
+    ],
+    '@nuxtjs/sitemap'
   ],
 
   bootstrapVue: {
@@ -125,6 +126,12 @@ export default {
     optimization: {
       minimize: !isDev
     },
+  },
+
+  sitemap: {
+    hostname: 'https://on-ona-atelier.ru',
+    gzip: true,
+    exclude: [],
   },
 
   webfontloader: {
