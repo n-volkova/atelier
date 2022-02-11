@@ -131,17 +131,19 @@ export default class Prices extends Vue {
   }
 }
 
-.table-bold {
-  font-weight: $font-weight-bold;
-
-  & caption {
+.table {
+  caption {
     caption-side: top
   }
-}
 
-.table-red {
-  color: #bd2232;
-  font-weight: $font-weight-bold;
+  &-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &-red {
+    color: #bd2232;
+    font-weight: $font-weight-bold;
+  }
 }
 
 thead {
