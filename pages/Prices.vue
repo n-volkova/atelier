@@ -95,14 +95,9 @@
 import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component({})
-export default class Prices extends Vue {
-  middleware({ route, redirect }) {
-    if (route.path === '/prices' || route.path === '/prices/') {
-      return redirect('/prices/female-prices');
-    }
-  }
-}
+export default class Prices extends Vue {}
 </script>
+
 <style lang="scss">
 .prices {
   margin-top: 20px;

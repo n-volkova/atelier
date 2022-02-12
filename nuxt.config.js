@@ -17,7 +17,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
     ]
   },
 
@@ -75,17 +75,19 @@ export default {
   modules: [
     'nuxt-webfontloader',
     'bootstrap-vue/nuxt',
-    [
-      '@nuxtjs/yandex-metrika',
-      {
-        id: process.env.YANDEX_METRIKA_ID,
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      }
-    ],
-    '@nuxtjs/sitemap'
+    ['@nuxtjs/yandex-metrika', {
+      id: process.env.YANDEX_METRIKA_ID,
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    }],
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Host: 'www.on-ona-atelier.ru',
+      Sitemap: 'https://on-ona-atelier.ru/sitemap.xml'
+    }]
   ],
 
   bootstrapVue: {

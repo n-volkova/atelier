@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="120" height="120" fill="white"/>
+<g filter="url(#filter0_i_22_31)">
+<path d="M95.5 101H40C40 101 38.8 93.5 41.5 84.5C44.2 75.5 51 64.5 51 53.5C51 42.5 46 33.5 46 33.5C46 33.5 60 34 64.5 31C69 28 73 20 73 20H92V15M92 14V29.5C89.9516 33.7676 80.8141 44.081 80.5 56.5C80.2008 68.3317 97 74.5 95.5 100.5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path d="M29.5 15C43.1867 13.6687 49.2394 11.8086 53.5 4" stroke="black" stroke-width="4" stroke-linecap="round"/>
+<path d="M66 3C72.4012 11.3173 77.5414 12.7892 92 14" stroke="black" stroke-width="4" stroke-linecap="round"/>
+<path d="M58 117C58 118.105 58.8954 119 60 119C61.1046 119 62 118.105 62 117H58ZM58 103V117H62V103H58Z" fill="black"/>
+<path d="M27.5 101C26 75 40.7992 64.8317 40.5 53C40.5 44 37 40 33.5 34.5" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72.7142 18.5144C72.8906 18.1969 73.2252 18 73.5884 18H89.1589C89.6451 18 90.0608 18.3497 90.1441 18.8287L91.9323 29.1105C91.9758 29.3607 91.9225 29.6182 91.7831 29.8305L81.6465 45.2767C81.5505 45.423 81.4946 45.5919 81.4843 45.7666L80.5194 62.1699C80.5068 62.3842 80.5635 62.597 80.6812 62.7766L89.9258 76.8868C89.9751 76.9619 90.0139 77.0433 90.0414 77.1288L94.452 90.8508C94.4838 90.9496 94.5 91.0529 94.5 91.1568V98.5C94.5 99.0523 94.0523 99.5 93.5 99.5H61.5H42.122C41.5243 99.5 41.0601 98.9791 41.1286 98.3854L42.487 86.6125C42.4956 86.5377 42.5127 86.4642 42.5378 86.3933L51 62.5L52.9474 53.7368C52.982 53.5812 52.9788 53.4196 52.9383 53.2654L48.3301 35.7545C48.1633 35.1204 48.6415 34.5 49.2972 34.5H55.7132C55.9006 34.5 56.0843 34.4473 56.2432 34.348L67.7812 27.1368C67.9247 27.0471 68.0431 26.9224 68.1253 26.7744L72.7142 18.5144Z" fill="black"/>
+<defs>
+<filter id="filter0_i_22_31" x="37.7343" y="12" width="59.8605" height="95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_22_31"/>
+</filter>
+</defs>
+</svg>
