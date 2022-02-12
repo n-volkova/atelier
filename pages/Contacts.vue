@@ -1,23 +1,22 @@
 <template>
   <div class="contacts">
-    <div
-      v-if="showMap"
-      class="container contacts__map-container"
-    >
-      <div
-        v-if="loaderVisible"
-        class="contacts__map-loader"
-      >
-        <b-icon-arrow-clockwise
-          animation="spin"
-          font-scale="7"
-          color="#d3bead"
-        />
-      </div>
+    <div class="container contacts__map-container">
       <yandex-map
         :coords="coords"
         @map-was-initialized="onMapLoaded"
       />
+      <transition name="fade">
+        <div
+          v-if="!mapReady"
+          class="contacts__map-loader"
+        >
+          <b-icon-arrow-clockwise
+            animation="spin"
+            font-scale="7"
+            color="#d3bead"
+          />
+        </div>
+      </transition>
 
       <div class="contacts__info">
         Ждём Вас по адресу:
@@ -72,22 +71,18 @@ import ymaps from 'yandex-maps';
   components: { BIconArrowClockwise }
 })
 export default class Contacts extends Vue {
-  showMap: boolean = false;
-  loaderVisible: boolean = true;
+  mapReady: boolean = false;
   coords = [55.57597714259465, 37.57844600132748];
 
   onMapLoaded(map: ymaps.Map) {
-    this.loaderVisible = false;
+    this.mapReady = true;
+
     try {
       (window.ymaps as any).findOrganization('80861612234').then((orgGeoObject: ymaps.GeoObject) => {
         map.geoObjects.add(orgGeoObject);
         orgGeoObject.balloon.open();
       });
     } catch (e) {}
-  }
-
-  mounted() {
-    this.showMap = true;
   }
 }
 </script>
@@ -190,5 +185,12 @@ export default class Contacts extends Vue {
       border-radius: 7px;
     }
   }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

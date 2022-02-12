@@ -1,7 +1,10 @@
 <template>
   <div class="main__bg">
     <navbar />
-    <nuxt />
+    <nuxt
+      keep-alive
+      :nuxt-child-key="$route.fullPath"
+    />
   </div>
 </template>
 

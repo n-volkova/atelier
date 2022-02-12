@@ -40,7 +40,7 @@
         Главная
       </nuxt-link>
       <nuxt-link
-        to="/prices/female-prices"
+        to="/prices"
         class="navbar__link"
       >
         Прейскурант

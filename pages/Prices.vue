@@ -86,7 +86,10 @@
           Мелкий ремонт
         </b-nav-item>
       </b-nav>
-      <nuxt-child keep-alive />
+      <nuxt-child
+        keep-alive
+        :nuxt-child-key="$route.fullPath"
+      />
     </div>
   </div>
 </template>
@@ -95,7 +98,13 @@
 import { Vue, Component } from 'nuxt-property-decorator';
 
 @Component({})
-export default class Prices extends Vue {}
+export default class Prices extends Vue {
+  middleware({ route, redirect }) {
+    if (route.path === '/prices' || route.path === '/prices/') {
+      return redirect('/prices/female-prices');
+    }
+  }
+}
 </script>
 
 <style lang="scss">
