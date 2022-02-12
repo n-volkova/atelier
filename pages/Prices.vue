@@ -164,7 +164,7 @@ thead {
       background-color: $body-color;
     }
 
-    &:not(.active):hover {
+    &:not(.nuxt-link-active):hover {
       background-color: $beige-light;
     }
   }
