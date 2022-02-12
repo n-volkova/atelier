@@ -91,7 +91,6 @@ export default {
   ],
 
   bootstrapVue: {
-    bootstrapVueCSS: false,
     components: ['BIcon', 'BNav', 'BNavItem'],
     componentPlugins: ['LayoutPlugin', 'TablePlugin'],
     directivePlugins: [],

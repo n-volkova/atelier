@@ -86,7 +86,7 @@
           Мелкий ремонт
         </b-nav-item>
       </b-nav>
-      <nuxt-child />
+      <nuxt-child keep-alive />
     </div>
   </div>
 </template>
