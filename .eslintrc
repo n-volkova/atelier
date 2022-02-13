@@ -1,0 +1,149 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": [
+    "plugin:vue/strongly-recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "parser": "@typescript-eslint/parser",
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  },
+  "rules": {
+    "no-debugger": "error",
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "always",
+          "normal": "always",
+          "component": "always"
+        }
+      }
+    ],
+    "vue/attribute-hyphenation": "off",
+    "vue/multi-word-component-names": "off",
+    "no-var": "error",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "vue/html-indent": [
+      "error",
+      2
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "semi": "error",
+    "space-before-function-paren": "off",
+    "require-await": "off",
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true
+      }
+    ],
+    "key-spacing": ["error",
+      {
+        "afterColon": true
+      }
+    ],
+    "curly": "error",
+    "brace-style": [
+      "error"
+    ],
+    "no-empty": [
+      "error",
+      {
+        "allowEmptyCatch": true
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": [
+          "const",
+          "let",
+          "var"
+        ],
+        "next": [
+          "const",
+          "let",
+          "var"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      },
+      {
+        "blankLine": "always",
+        "prev": "function",
+        "next": "*"
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 1
+      }
+    ],
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
+    "space-before-blocks": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
+          }
+        }
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "time",
+          "timeEnd"
+        ]
+      }
+    ]
+  }
+}

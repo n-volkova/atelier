@@ -1,0 +1,36 @@
+$font-family-base: 'Nunito Sans';
+
+$font-size-base:              16px !default; // Assumes the browser default, typically `16px`
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-xs:                ($font-size-base * .75) !default;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.4 !default;
+
+// Headers
+$headings-margin-bottom:      0.5rem !default;
+$headings-margin-top:		      1em !default;
+$headings-font-weight:        700 !default;
+$headings-line-height:        1.25 !default;
+$headings-color:              inherit !default;
+
+$paragraph-margin-bottom:     1rem !default;
+$font-weight-bolder:          bolder !default;
+
+$link-color:                  rgba(22, 22, 22, 0.795) !default;
+$link-decoration:             none !default;
+$link-hover-color:            darken($link-color, 15%) !default;
+$link-hover-decoration:       underline !default;
+$link-inactive-color:         #495057 !default;
+
+$black: #000;
+$body-color: #d3bead;
+$beige: #d3bead;
+$beige-light: rgba($beige, 0.2);
+$default-text-size: rgba($beige, 0.2);
+$accent-text: Comfortaa;
