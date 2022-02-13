@@ -88,7 +88,7 @@
       </b-nav>
       <nuxt-child
         keep-alive
-        :nuxt-child-key="$route.fullPath"
+        :key="$route.fullPath"
       />
     </div>
   </div>

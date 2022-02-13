@@ -68,7 +68,7 @@ import { BIconArrowClockwise } from 'bootstrap-vue';
 import ymaps from 'yandex-maps';
 
 @Component({
-  components: { BIconArrowClockwise }
+  components: { BIconArrowClockwise },
 })
 export default class Contacts extends Vue {
   mapReady: boolean = false;
