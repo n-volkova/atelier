@@ -60,6 +60,13 @@
         "afterColon": true
       }
     ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
     "curly": "error",
     "brace-style": [
       "error"
