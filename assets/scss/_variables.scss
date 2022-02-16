@@ -1,4 +1,4 @@
-$font-family-base: 'Nunito Sans';
+$font-family-base: 'Nunito Sans', sans-serif;
 
 $font-size-base:              16px !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                ($font-size-base * 1.25) !default;
@@ -33,4 +33,4 @@ $body-color: #d3bead;
 $beige: #d3bead;
 $beige-light: rgba($beige, 0.2);
 $default-text-size: rgba($beige, 0.2);
-$accent-text: Comfortaa;
+$accent-text: Comfortaa, cursive;

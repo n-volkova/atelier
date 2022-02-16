@@ -23,6 +23,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/fonts/fonts.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -37,7 +38,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
   ],
 
   styleResources: {
@@ -73,7 +74,6 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-webfontloader',
     'bootstrap-vue/nuxt',
     ['@nuxtjs/yandex-metrika', {
       id: process.env.YANDEX_METRIKA_ID,
@@ -133,12 +133,6 @@ export default {
     hostname: 'https://on-ona-atelier.ru',
     gzip: true,
     exclude: [],
-  },
-
-  webfontloader: {
-    google: {
-      families: ['Comfortaa:400,700:latin,cyrillic', 'Nunito Sans:400,700:latin,cyrillic'],
-    }
   },
 
   publicRuntimeConfig: {

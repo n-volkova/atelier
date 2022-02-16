@@ -1,10 +1,14 @@
 <template>
   <div class="contacts">
-    <div class="container contacts__map-container">
+    <div
+      v-if="initMap"
+      class="container contacts__map-container"
+    >
       <yandex-map
         :coords="coords"
         @map-was-initialized="onMapLoaded"
       />
+
       <transition name="fade">
         <div
           v-if="!mapReady"
@@ -68,21 +72,25 @@ import { BIconArrowClockwise } from 'bootstrap-vue';
 import ymaps from 'yandex-maps';
 
 @Component({
-  components: { BIconArrowClockwise },
+  components: { BIconArrowClockwise }
 })
 export default class Contacts extends Vue {
+  initMap: boolean = false;
   mapReady: boolean = false;
   coords = [55.57597714259465, 37.57844600132748];
 
   onMapLoaded(map: ymaps.Map) {
     this.mapReady = true;
-
     try {
       (window.ymaps as any).findOrganization('80861612234').then((orgGeoObject: ymaps.GeoObject) => {
         map.geoObjects.add(orgGeoObject);
         orgGeoObject.balloon.open();
       });
     } catch (e) {}
+  }
+
+  mounted() {
+    this.initMap = true;
   }
 }
 </script>

@@ -36,11 +36,6 @@ export default class MainPage extends Vue {}
 </script>
 
 <style lang="scss">
-main {
-  font-family: $font-family-base;
-  color: $beige;
-}
-
 .main {
   &__header {
     text-align: center;

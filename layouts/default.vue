@@ -18,6 +18,11 @@ export default class Layout extends Vue {}
 <style lang="scss">
 @import "assets/scss/main.scss";
 
+body:after {
+  display: none;
+  content: url("assets/bg_desktop.jpg") url("assets/leather.svg") url("assets/whatsapp.svg");
+}
+
 .main {
   &__bg {
     display: flex;
