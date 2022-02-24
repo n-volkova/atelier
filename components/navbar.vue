@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar container">
+  <nav class="container d-flex justify-content-between align-items-start">
     <div class="navbar__contacts">
       <a
         class="navbar__link navbar__link--phone"
@@ -11,7 +11,7 @@
         href="https://yandex.ru/maps/org/on_ona/80861612234/?ll=37.577813%2C55.575500&z=17"
         target="_blank"
       >
-        Москва, ул. Ратная, д. 10, корпус 2 <br />(вход со двора)
+        Москва, ул.&nbsp;Ратная, д.&nbsp;10, корпус&nbsp;2 <br />(вход со двора)
       </a>
       <div class="navbar__insta">
         <b-icon-instagram />
@@ -31,54 +31,106 @@
         Написать в WhatsApp
       </a>
     </div>
-    <div class="navbar__routes">
-      <nuxt-link
-        exact
-        to="/"
-        class="navbar__link"
+    <b-navbar toggleable="lg">
+      <b-navbar-toggle
+        target="nav"
+        class="navbar__toggler ml-auto"
       >
-        Главная
-      </nuxt-link>
-      <nuxt-link
-        to="/prices"
-        class="navbar__link"
+        <template #default="{ expanded }">
+          <b-icon
+            v-if="expanded"
+            icon="x"
+          />
+          <b-icon
+            v-else
+            icon="list"
+          />
+        </template>
+      </b-navbar-toggle>
+      <b-collapse
+        id="nav"
+        is-nav
       >
-        Прейскурант
-      </nuxt-link>
-      <!-- <nuxt-link
-        to="/gallery"
-        class="navbar__link"
-      >
-        Портфолио
-      </nuxt-link> -->
-      <nuxt-link
-        to="/contacts"
-        class="navbar__link"
-      >
-        Контакты
-      </nuxt-link>
-    </div>
-  </div>
+        <b-navbar-nav
+          align="end"
+          class="navbar__routes"
+        >
+          <nuxt-link
+            exact
+            to="/"
+            class="navbar__link"
+          >
+            Главная
+          </nuxt-link>
+          <nuxt-link
+            to="/prices"
+            class="navbar__link"
+          >
+            Прейскурант
+          </nuxt-link>
+          <!-- <nuxt-link
+          to="/gallery"
+          class="navbar__link"
+        >
+          Портфолио
+        </nuxt-link> -->
+          <nuxt-link
+            to="/contacts"
+            class="navbar__link"
+          >
+            Контакты
+          </nuxt-link>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+  </nav>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
-import { BIconInstagram } from 'bootstrap-vue';
+import { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconList, BIconX } from 'bootstrap-vue';
 
 @Component({
-  components: { BIconInstagram },
+  components: { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconList, BIconX },
 })
-export default class Navbar extends Vue {}
+export default class Navbar extends Vue {
+}
 </script>
 
 <style lang="scss">
-.navbar {
+nav {
   color: $beige;
-  align-items: start;
+  margin-bottom: 20px;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 50px;
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    right: 0;
+  }
 
   &__contacts {
     display: flex;
     flex-direction: column;
+
+    @include media-breakpoint-down(md) {
+      width: 50%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 70%;
+    }
 
     .navbar__link:hover {
       text-decoration: underline;
@@ -136,6 +188,23 @@ export default class Navbar extends Vue {}
     }
   }
 
+  &-collapse {
+    @include media-breakpoint-down(md) {
+      border: 1px dotted $beige;
+      background-color: #2c2928;
+    }
+  }
+
+  &-toggler.navbar__toggler {
+    padding-top: 0;
+    padding-right: 0;
+    border: none;
+    font-size: 44px;
+    line-height: 0;
+    color: $beige;
+    border-color: $beige;
+  }
+
   &__routes {
     display: flex;
 
@@ -151,8 +220,14 @@ export default class Navbar extends Vue {}
       }
 
       &.nuxt-link-active {
-        border-bottom: 1px solid $beige;
-        background-color: transparent;
+        @include media-breakpoint-up(md) {
+          border-bottom: 1px solid $beige;
+          background-color: transparent;
+        }
+
+        @include media-breakpoint-down(md) {
+          background-color: $beige-light;
+        }
       }
     }
   }

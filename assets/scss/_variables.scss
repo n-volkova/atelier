@@ -1,3 +1,11 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 $font-family-base: 'Nunito Sans', sans-serif;
 
 $font-size-base:              16px !default; // Assumes the browser default, typically `16px`
@@ -33,4 +41,4 @@ $body-color: #d3bead;
 $beige: #d3bead;
 $beige-light: rgba($beige, 0.2);
 $default-text-size: rgba($beige, 0.2);
-$accent-text: Comfortaa, cursive;
+$accent-text: Comfortaa, fantasy;

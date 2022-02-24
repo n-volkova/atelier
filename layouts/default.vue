@@ -27,14 +27,19 @@ body:after {
   &__bg {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
-    height: 100vh;
     padding: 40px 0;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     background-image: url("assets/bg_desktop.jpg");
     box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 0;
+    }
   }
 }
 </style>

@@ -1,26 +1,29 @@
 <template>
-  <div class="contacts">
-    <div
-      v-if="initMap"
-      class="container contacts__map-container"
-    >
-      <yandex-map
-        :coords="coords"
-        @map-was-initialized="onMapLoaded"
-      />
+  <div
+    v-if="initMap"
+    class="contacts"
+  >
+    <div class="container d-flex">
+      <div class="contacts__map-container">
+        <yandex-map
+          :key="mapRerenderKey"
+          :coords="coords"
+          @map-was-initialized="onMapLoaded"
+        />
 
-      <transition name="fade">
-        <div
-          v-if="!mapReady"
-          class="contacts__map-loader"
-        >
-          <b-icon-arrow-clockwise
-            animation="spin"
-            font-scale="7"
-            color="#d3bead"
-          />
-        </div>
-      </transition>
+        <transition name="fade">
+          <div
+            v-if="!mapReady"
+            class="contacts__map-loader"
+          >
+            <b-icon-arrow-clockwise
+              animation="spin"
+              font-scale="7"
+              color="#d3bead"
+            />
+          </div>
+        </transition>
+      </div>
 
       <div class="contacts__info">
         Ждём Вас по адресу:
@@ -77,6 +80,7 @@ import ymaps from 'yandex-maps';
 export default class Contacts extends Vue {
   initMap: boolean = false;
   mapReady: boolean = false;
+  mapRerenderKey: boolean = false;
   coords = [55.57597714259465, 37.57844600132748];
 
   onMapLoaded(map: ymaps.Map) {
@@ -92,6 +96,12 @@ export default class Contacts extends Vue {
   mounted() {
     this.initMap = true;
   }
+
+  activated() {
+    if (!this.mapReady) {
+      this.mapRerenderKey = !this.mapRerenderKey;
+    }
+  }
 }
 </script>
 
@@ -99,31 +109,54 @@ export default class Contacts extends Vue {
 .ymap-container {
   width: 500px;
   height: 500px;
-  margin-right: 20px;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    height: 500px;
+    margin: 10px auto;
+  }
 }
 
 .contacts {
+  display: flex;
   margin-top: 20px;
   padding: 30px 0;
   background-color: #fff;
   color: #000;
   font-size: 17px;
 
+  .container {
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+
   &__map-container {
-    display: flex;
     position: relative;
+    margin-right: 20px;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      height: 500px;
+      margin: 0 auto 20px;
+    }
   }
 
   &__map-loader {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e8e4df;
+    background-color: #80705d;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__address {
@@ -148,6 +181,11 @@ export default class Contacts extends Vue {
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 15px;
+
+      @include media-breakpoint-down(md) {
+        text-align: center;
+        font-size: 23px;
+      }
     }
 
     &--insta {
@@ -185,12 +223,23 @@ export default class Contacts extends Vue {
     }
 
     &--external {
-      display: inline-flex;
+      display: inline-block;
       padding: 7px 15px;
+      margin-bottom: 10px;
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
+      white-space: nowrap;
       border-radius: 7px;
+
+      @include media-breakpoint-down(md) {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
     }
   }
 }

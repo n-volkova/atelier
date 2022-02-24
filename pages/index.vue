@@ -9,15 +9,15 @@
       </div>
     </div>
     <div class="main__advantages">
-      <div class="main__text w-25">
+      <div class="main__text">
         <b-icon-scissors rotate="30" />
         Пошив и ремонт мужской, женской, детской одежды любой сложности
       </div>
-      <div class="main__text w-25">
+      <div class="main__text">
         <div class="b-icon icon--leather" />
-        Работаем с любой тканью, мехом&nbsp;и кожей
+        Работаем с любой тканью, мехом и&nbsp;кожей
       </div>
-      <div class="main__text w-25">
+      <div class="main__text">
         <b-icon-suit-heart />
         Опыт работы — более 20 лет
       </div>
@@ -64,6 +64,21 @@ export default class MainPage extends Vue {}
     justify-content: space-evenly;
     font-size: 20px;
     text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
+
+    .main__text {
+      @include media-breakpoint-up(sm) {
+        width: 25%;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
 
     .b-icon {
       display: block;
