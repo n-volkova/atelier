@@ -6,7 +6,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ателье в Северном Бутово "ON-ONA" - Он и Она, пошив и ремонт одежды',
+    title: 'Ателье Северное Бутово ON-ONA - Он и Она, пошив и ремонт одежды',
     htmlAttrs: {
       lang: 'ru'
     },

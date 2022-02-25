@@ -68,12 +68,12 @@
           >
             Прейскурант
           </nuxt-link>
-          <!-- <nuxt-link
-          to="/gallery"
-          class="navbar__link"
-        >
-          Портфолио
-        </nuxt-link> -->
+          <nuxt-link
+            to="/gallery"
+            class="navbar__link"
+          >
+            Портфолио
+          </nuxt-link>
           <nuxt-link
             to="/contacts"
             class="navbar__link"

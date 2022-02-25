@@ -229,7 +229,6 @@ export default class Contacts extends Vue {
       text-decoration: none;
       font-weight: bold;
       font-size: 18px;
-      white-space: nowrap;
       border-radius: 7px;
 
       @include media-breakpoint-down(md) {
