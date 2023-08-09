@@ -30,6 +30,16 @@
       >
         Написать в WhatsApp
       </a>
+      <div class="navbar__tg">
+        <b-icon-telegram />
+        <a
+          class="navbar__link"
+          href="https://t.me/on_ona_atelier"
+          target="_blank"
+        >
+          Написать в Telegram
+        </a>
+      </div>
     </div>
     <b-navbar toggleable="lg">
       <b-navbar-toggle
@@ -88,10 +98,10 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
-import { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconList, BIconX } from 'bootstrap-vue';
+import { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconTelegram, BIconList, BIconX } from 'bootstrap-vue';
 
 @Component({
-  components: { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconList, BIconX },
+  components: { BNavbar, BNavbarNav, BCollapse, BNavbarToggle, BIconInstagram, BIconTelegram, BIconList, BIconX },
 })
 export default class Navbar extends Vue {
 }
@@ -104,6 +114,10 @@ nav {
 
   @include media-breakpoint-down(sm) {
     margin-bottom: 50px;
+  }
+
+  .navbar-collapse.show {
+    z-index: 1;
   }
 }
 
@@ -173,6 +187,17 @@ nav {
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
       }
+    }
+  }
+
+  &__tg {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 17px;
+
+    .bi-telegram {
+      margin-right: 6px;
     }
   }
 

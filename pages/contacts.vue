@@ -58,6 +58,13 @@
           Написать в WhatsApp
         </a>
         <a
+          class="contacts__link contacts__link--telegram contacts__link--external"
+          href="https://t.me/on_ona_atelier"
+          target="_blank"
+        >
+          Написать в Telegram
+        </a>
+        <a
           class="contacts__link contacts__link--review contacts__link--external"
           href="https://yandex.ru/maps/?orgpage%5Bid%5D=80861612234&amp;add-review"
           target="_blank"
@@ -210,6 +217,17 @@ export default class Contacts extends Vue {
         width: 18px;
         height: 18px;
         background-color: #fff;
+      }
+    }
+
+    &--telegram {
+      background-color: #229ED9;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #65b2d6;
       }
     }
 
